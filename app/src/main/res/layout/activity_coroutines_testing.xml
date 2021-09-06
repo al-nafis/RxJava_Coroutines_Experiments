@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="activity"
+            type="com.mnafis.rxjava_coroutines_experiments.CoroutinesTestingActivity" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".CoroutinesTestingActivity">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="@{() -> activity.rxKotlinBasic(true)}"
+            android:text="RxKotlin Test" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="@{() -> activity.rxKotlinBasic(false)}"
+            android:text="RxKotlin Failure Test" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="@{() -> activity.coroutinesBasic(true)}"
+            android:text="Coroutines Test" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="@{() -> activity.coroutinesBasic(false)}"
+            android:layout_marginBottom="70dp"
+            android:text="Coroutines Failure Test" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="@{() -> activity.rxKotlinDataStreamTest(true)}"
+            android:text="RxKotlin Country Service Test" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="@{() -> activity.rxKotlinDataStreamTest(false)}"
+            android:text="RxKotlin Country Service Failure Test" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="@{() -> activity.coroutinesDataStreamTest(true)}"
+            android:text="Coroutines Country Service Test" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="70dp"
+            android:onClick="@{() -> activity.coroutinesDataStreamTest(false)}"
+            android:text="Coroutines Country Service Failure Test" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="@{() -> activity.nextPage()}"
+            android:text="Next Screen" />
+
+    </LinearLayout>
+</layout>

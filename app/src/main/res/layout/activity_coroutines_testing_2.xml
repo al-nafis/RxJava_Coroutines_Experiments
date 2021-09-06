@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="activity"
+            type="com.mnafis.rxjava_coroutines_experiments.CoroutinesTesting2Activity" />
+        <variable
+            name="viewModel"
+            type="com.mnafis.rxjava_coroutines_experiments.CoroutinesTesting2ViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".CoroutinesTesting2Activity">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="@{() -> activity.streamUsers(true)}"
+            android:text="Stream User Names" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="70dp"
+            android:onClick="@{() -> activity.streamUsers(false)}"
+            android:text="Stream User Names Failure" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="@{() -> viewModel.tellMeYourName(true, true)}"
+            android:text="Tell Me Your Name" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="@{() -> viewModel.tellMeYourName(false, true)}"
+            android:text="Tell Me Your Name: First Name Failure" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="@{() -> viewModel.tellMeYourName(true, false)}"
+            android:text="Tell Me Your Name: Last Name Failure" />
+    </LinearLayout>
+</layout>
