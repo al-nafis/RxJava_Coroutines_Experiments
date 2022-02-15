@@ -14,10 +14,10 @@ class CoroutinesTesting2ViewModel : ViewModel() {
 
     fun tellMeYourName(shouldPassFistName: Boolean, shouldPassLastName: Boolean) {
         println("$TAG ---------------------------------------------")
-        viewModelScope.launch {
+        viewModelScope.launch (Dispatchers.IO) {
             try {
-                val firstName = withContext(Dispatchers.IO) { service.getFirstName(shouldPassFistName) }
-                val lastName = withContext(Dispatchers.IO) { service.getLastName(shouldPassLastName) }
+                val firstName =  service.getFirstName(shouldPassFistName)
+                val lastName =  service.getLastName(shouldPassLastName)
                 println("$TAG $lastName, $firstName $lastName")
             } catch (e: Exception) {
                 println("$TAG ${e.localizedMessage}")
